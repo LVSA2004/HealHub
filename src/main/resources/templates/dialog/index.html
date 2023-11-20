@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{_template::head('Chat')}"></head>
+<body>
+<nav th:replace="~{_template::#navbar}"></nav>
+<div style="
+            background-color: #F3F3E9;
+            margin: 0px;
+            height:100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            "
+>
+
+    <div class="messages-container">
+
+        <a href="/chat"
+           class="btn"
+           style="margin-bottom: 10px;"
+        >
+            NEW chat
+        </a>
+
+        <a th:href="'/chat/' + ${dialog.id}"
+           th:each="dialog : ${dialogList}"
+
+           th:class="'dialog-link ' + ${dialog.id == dialogId ? 'choosed': ''}"
+        >
+            <i class="material-icons">chat_bubble_outline</i>
+            <p th:text="${dialog.title}"></p>
+        </a>
+    </div>
+
+    <div style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            "
+    >
+        <div style="
+                  width: 1000px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  overflow-y: scroll;
+                  height: 75vh;
+                  "
+        >
+
+            <div th:each="chat : ${chatList}" th:class="'container ' +${!chat.bot ? 'darker': ''}">
+                <img th:src="${chat.bot ? '../../assets/Logo HealHub png.png' : '../../assets/profile.jpg.png'}" alt="Avatar" th:class="${!chat.bot ? 'right' : ''}">
+                <p th:text="${chat.text}"></p>
+                <span  th:text="${chat.time}" th:class="${!chat.bot ? 'time-left' : 'time-right'}"></span>
+            </div>
+
+        </div>
+
+        <form class="text-box" th:action="${'/chat/' + dialogId }"  method="post" th:object="${chat}">
+
+          <textarea
+                  placeholder="send message"
+                  th:field="*{text}"
+          ></textarea>
+
+            <button class="btn"><i class="material-icons">send</i>
+            </button>
+
+        </form>
+    </div>
+
+
+</div>
+<script>
+    const textarea = document.querySelector("textarea");
+    textarea.addEventListener("keyup", e=>{
+        textarea.style.height = `auto`
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`
+
+    })
+</script>
+</body>
+</html>

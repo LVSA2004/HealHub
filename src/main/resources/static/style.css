@@ -1,0 +1,166 @@
+
+
+.avatar-wrapper{
+    margin-right:10px
+}
+
+
+/*----------------------------------------------
+
+
+/* Chat containers */
+
+.containerstatic {
+
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F3F3E9;
+}
+
+.container {
+    border: 1px solid #dedede;
+    border-color: #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    color: white;
+}
+
+/* Darker chat container */
+.darker {
+
+    background-color: #444654;
+}
+
+/* Clear floats */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style images */
+.container img {
+    float: left;
+    max-width: 45px;
+    height: 45px;
+    margin-right: 20px;
+    border-radius: 100%;
+}
+
+/* Style the right image */
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+    float: left;
+    color: #999;
+}
+
+.messages-container{
+    border-right: solid 2px white;
+    height: auto;
+    width: 25%;
+    height: 100vh;
+    background-color: #F3F3E9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: black;
+    align-items: center;
+    padding-top: 5%;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+/* Estilo para a "alça" da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0; /* Cor da barra de rolagem */
+    border-radius: 8px; /* Borda arredondada */
+}
+
+/* Estilo para a trilha da barra de rolagem */
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Sem fundo */
+}
+
+.text-box{
+    display: flex;
+    background-color: #678362;
+    height: fit-content;
+    border-radius: 5%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    align-items: center;
+    width: 50%;
+}
+
+.text-box textarea{
+    resize: none;
+    border-style: none;
+    color: white;
+    outline: none;
+    max-height: 200px;
+    padding: 10px;
+}
+
+.text-box textarea:focus{
+    resize: none;
+    border-style: none;
+    border-color: transparent;
+    color: white;
+}
+
+.text-box textarea:active{
+    resize: none;
+    border-style: none;
+    border-color: transparent;
+    color: white;
+}
+
+textarea::-webkit-scrollbar{
+    width: 0;
+}
+
+
+.dialog-link{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    padding:5px;
+    border-radius: 5%;
+    width:200px;
+    min-height: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.choosed{
+    background-color: #343541;
+}
+.dialog-link:hover{
+    background-color: #2a2b32;
+}
+
+.nav-wrapper{
+    background-color: #232323;
+}
+
+

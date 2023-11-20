@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{_template::head('Chat')}"></head>
+<body>
+<nav th:replace="~{_template::#navbar}"></nav>
+<div style="
+            background-color: #F3F3E9;
+            margin: 0px;
+            height:100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            "
+>
+
+    <div class="messages-container"
+    >
+        <a href="/chat" class="btn" style="margin-bottom: 10px;">Nova Conversa</a>
+
+        <a th:href="'chat/' + ${dialog.id}"
+           th:each="dialog : ${dialogList}"
+           class="dialog-link"
+        >
+            <i class="material-icons">chat_bubble_outline</i>
+            <p th:text="${dialog.title}"></p>
+        </a>
+
+    </div>
+
+    <div style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            "
+    >
+        <div style="
+                  width: 1000px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  "
+        >
+
+            <div style="height: 75vh;"></div>
+
+        </div>
+
+        <form class="text-box" th:action="${'/chat'}"  method="post" th:object="${chat}">
+
+          <textarea
+                  placeholder="Clique aqui para digitar"
+                  th:field="*{text}"
+          ></textarea>
+
+            <button class="btn"><i class="material-icons">send</i>
+            </button>
+
+        </form>
+    </div>
+
+
+</div>
+<script>
+    const textarea = document.querySelector("textarea");
+    textarea.addEventListener("keyup", e=>{
+        textarea.style.height = `auto`
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`
+
+    })
+</script>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        const options = {
+            constrainWidth: false,
+            coverTrigger: false
+        }
+        var instances = M.Dropdown.init(elems, options);
+    });
+</script>
+</html>

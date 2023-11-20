@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{_template::head('Formulario')}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>HealHub</title>
+</head>
+
+<body>
+<nav th:replace="~{_template::#navbar}"></nav>
+<div style="
+          padding: 50px;
+          background-color: #F3F3E9;
+          "
+    >
+<div class="row">
+    <form th:action="${'/formulario'}" method="post" class="col s12" th:object="${formulario}">
+        <div class="row">
+            <div class="input-field col s12">
+                <input
+                        th:field="*{num_seg_saude}"
+                        type="text"
+                        th:classappend="${#fields.hasErrors('num_seg_saude')} ? invalid"
+                >
+                <label for="num_seg_saude">Número do Seguro de Saúde</label>
+                <span class="helper-text red-text" th:errors="*{num_seg_saude}"></span>
+            </div>
+        </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{companhia_seg_saude}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('companhia_seg_saude')} ? invalid"
+                    >
+                    <label for="companhia_seg_saude">Companhia do Seguro de Saúde</label>
+                    <span class="helper-text red-text" th:errors="*{companhia_seg_saude}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{alergias}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('alergias')} ? invalid"
+                    >
+                    <label for="alergias">Alergias</label>
+                    <span class="helper-text red-text" th:errors="*{alergias}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{condicoes_medicas}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('condicoes_medicas')} ? invalid"
+                    >
+                    <label for="condicoes_medicas">Condições Médicas Pré-existentes</label>
+                    <span class="helper-text red-text" th:errors="*{condicoes_medicas}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{cirurgias}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('cirurgias')} ? invalid"
+                    >
+                    <label for="cirurgias">Cirurgias Já Realizadas</label>
+                    <span class="helper-text red-text" th:errors="*{cirurgias}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{medicamentos}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('medicamentos')} ? invalid"
+                    >
+                    <label for="medicamentos">Medicamentos Tomados com Frequência</label>
+                    <span class="helper-text red-text" th:errors="*{medicamentos}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{razao_visita}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('razao_visita')} ? invalid"
+                    >
+                    <label for="razao_visita">Razão da Visita</label>
+                    <span class="helper-text red-text" th:errors="*{razao_visita}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{horario_sintomas}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('horario_sintomas')} ? invalid"
+                    >
+                    <label for="horario_sintomas"> Horário de Inicio dos Sintomas</label>
+                    <span class="helper-text red-text" th:errors="*{horario_sintomas}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{historico_problemas}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('historico_problemas')} ? invalid"
+                    >
+                    <label for="historico_problemas"> Histórico de Problemas Médicos</label>
+                    <span class="helper-text red-text" th:errors="*{historico_problemas}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{hist_familiar}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('hist_familiar')} ? invalid"
+                    >
+                    <label for="hist_familiar"> Histórico de Doenças na Família</label>
+                    <span class="helper-text red-text" th:errors="*{hist_familiar}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{doencas_geneticas}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('doencas_geneticas')} ? invalid"
+                    >
+                    <label for="doencas_geneticas"> Doenças Genéticas</label>
+                    <span class="helper-text red-text" th:errors="*{doencas_geneticas}"></span>
+                </div>
+            </div>
+        <div style="
+            
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            "
+      >
+
+        <div>
+            <a href="/formulario" class="btn grey">Cancelar</a>
+            <button class="btn" style="background-color: #678362;">salvar</button>
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>
