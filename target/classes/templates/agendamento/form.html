@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{_template::head('Agendamento')}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <title>HealHub</title>
+    </head>
+<body>
+    <nav th:replace="~{_template::#navbar}"></nav>
+    <div style="
+          padding: 50px;
+          background-color: #F3F3E9;
+          "
+    >
+    <div class="row">
+        <form th:action="${'/agendamento'}" method="post" class="col s12" th:object="${agendamento}">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                            th:field="*{Data_Desejada}"
+                            type="text"
+                            th:classappend="${#fields.hasErrors('Data_Desejada')} ? invalid"
+                    >
+                    <label for="Data_Desejada">Melhores data para agendarmos seu exame</label>
+                    <span class="helper-text red-text" th:errors="*{Data_Desejada}"></span>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input
+                                th:field="*{Unidade}"
+                                type="text"
+                                th:classappend="${#fields.hasErrors('Unidade')} ? invalid"
+                        >
+                        <label for="Unidade">Unidade Preferível</label>
+                        <span class="helper-text red-text" th:errors="*{Unidade}"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input
+                                th:field="*{Horario}"
+                                type="text"
+                                th:classappend="${#fields.hasErrors('Horario')} ? invalid"
+                        >
+                        <label for="Horario">Horario preferível para o agendamento dos exames</label>
+                        <span class="helper-text red-text" th:errors="*{Horario}"></span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+            <div style="
+                
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                "
+          >
+    
+            <div>
+                <a href="/agendamento" class="btn grey">Cancelar</a>
+                <button class="btn" style="background-color: #678362;">salvar</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

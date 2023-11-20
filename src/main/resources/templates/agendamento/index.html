@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="~{_template::head('Formulario')}">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        <title>HealHub</title>
+    </head>
+    <div style="
+          background-color: #F3F3E9;
+          padding-bottom: 150px;
+          "
+    >
+<body>
+    <nav th:replace="~{_template::#navbar}"></nav>
+
+    <div class="container-forms">
+
+        <div class="card-panel teal accent-3" th:if="${success}" th:text="${success}"></div>
+        <div class="card-panel red accent-3 white-text" th:if="${error}" th:text="${error}"></div>
+        <div style="
+            padding-left: 50px;
+            margin-top: 20px;
+            "
+        >
+
+        <h2>Lista de Agendamentos</h2>
+
+        <div class="row">
+            <div class="col s4 m6">
+                <div th:each="agendamento : ${agendamentoList}"class="card">
+                    <div class="card-image">
+                        <img src="https://cdn.discordapp.com/attachments/946468431794954250/1174507321746010253/Fundo_Agendamento.png?ex=6567d82e&is=6555632e&hm=5a5c1000729596a77468f63cadc0cc463e1baa3bea9f59f9708ce0537e4915da&">
+                        <span th:text="${agendamento.Data_Desejada}" class="card-title" style="color: black;"></span>
+
+                    </div>
+                    <div class="card-action">
+                        <a th:href="${'/agendamento/delete/' + agendamento.id}" class="waves-effect waves-light  red btn">Deletar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="fixed-action-btn">
+        <a href="/agendamento/new" class="btn-floating btn-large red">
+            <i class="large material-icons">add</i>
+        </a>
+    </div>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        const options = {
+            constrainWidth: false,
+            coverTrigger: false
+        }
+        var instances = M.Dropdown.init(elems, options);
+    });
+</script>
+</html>
