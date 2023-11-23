@@ -18,9 +18,9 @@
 
         <a href="/chat"
            class="btn"
-           style="margin-bottom: 10px;"
+           style="margin-bottom: 10px;  background-color: #678362;"
         >
-            NEW chat
+            Nova Conversa
         </a>
 
         <a th:href="'/chat/' + ${dialog.id}"
@@ -50,7 +50,7 @@
         >
 
             <div th:each="chat : ${chatList}" th:class="'container ' +${!chat.bot ? 'darker': ''}">
-                <img th:src="${chat.bot ? '../../assets/Logo HealHub png.png' : '../../assets/profile.jpg.png'}" alt="Avatar" th:class="${!chat.bot ? 'right' : ''}">
+                <img th:src="${chat.bot ? '../../assets/Letras Logo HealHub.png' : '../../assets/profile.jpg.png'}" alt="Avatar" th:class="${!chat.bot ? 'right' : ''}">
                 <p th:text="${chat.text}"></p>
                 <span  th:text="${chat.time}" th:class="${!chat.bot ? 'time-left' : 'time-right'}"></span>
             </div>
@@ -60,11 +60,11 @@
         <form class="text-box" th:action="${'/chat/' + dialogId }"  method="post" th:object="${chat}">
 
           <textarea
-                  placeholder="send message"
+                  placeholder="Clique aqui para digitar"
                   th:field="*{text}"
           ></textarea>
 
-            <button class="btn"><i class="material-icons">send</i>
+            <button class="btn" style="background-color: #232323"><i class="material-icons">send</i>
             </button>
 
         </form>

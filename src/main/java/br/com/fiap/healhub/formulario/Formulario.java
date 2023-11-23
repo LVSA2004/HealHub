@@ -5,6 +5,7 @@ import jakarta.validation.constraints.*;
 
 @Entity
 @Data
+@Table(name = "TB_HH_FORMULARIO")
 public class Formulario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

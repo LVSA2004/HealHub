@@ -16,7 +16,7 @@
 
     <div class="messages-container"
     >
-        <a href="/chat" class="btn" style="margin-bottom: 10px;">Nova Conversa</a>
+        <a href="/chat" class="btn" style="margin-bottom: 10px;  background-color: #678362;">Nova Conversa</a>
 
         <a th:href="'chat/' + ${dialog.id}"
            th:each="dialog : ${dialogList}"
@@ -53,7 +53,7 @@
                   th:field="*{text}"
           ></textarea>
 
-            <button class="btn"><i class="material-icons">send</i>
+            <button class="btn" style="background-color: #232323"><i class="material-icons">send</i>
             </button>
 
         </form>
