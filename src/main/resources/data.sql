@@ -1,1 +1,0 @@
-INSERT INTO TB_HH_FORMULARIO ( NUM_SEG_SAUDE, COMPANHIA_SEG_SAUDE,  ALERGIAS, CONDICOES_MEDICAS, CIRURGIAS, MEDICAMENTOS, RAZAO_VISITA, HORARIO_SINTOMAS, HISTORICO_PROBLEMAS,  HIST_FAMILIAR,  DOENCAS_GENETICAS)   VALUES('102131', 'cbc', 'polen', 'cancer', 'correcao ocular', 'neosoro', 'dor de cabeca', 'periodo da manha', 'bronquite', 'pressao alta', 'vitiligo')
