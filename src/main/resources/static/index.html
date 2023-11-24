@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{_template::head('continue')}">
+<head th:replace="~{_template::head('login')}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -12,7 +12,40 @@
 </head>
 
 <body>
-<nav th:replace="~{_template::#navbar}"></nav>
+    <nav id="navbar">
+        <div class="nav-wrapper">
+            <a href="https://cdn.discordapp.com/attachments/946468431794954250/1174503907783884830/Letras_Logo_HealHub.png?ex=6567d500&is=65556000&hm=79731e06bbb04d49edb187e7833918274101f84769a5a6b7253892366ba2be69&">
+    
+                <img src="https://cdn.discordapp.com/attachments/946468431794954250/1174503907783884830/Letras_Logo_HealHub.png?ex=6567d500&is=65556000&hm=79731e06bbb04d49edb187e7833918274101f84769a5a6b7253892366ba2be69&" alt="Logo HealHub" style="max-width: 70px; max-height: 65px; padding: 5px;">
+    
+            </a>
+            <a href="/home" class="brand-logo">HealHub</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/chat">Chat</a></li>
+                <li><a href="/formulario">Formulário</a></li>
+                <li><a href="/agendamento">Agendamento</a></li>
+                <li><a href="/desc">Como o Projeto Funciona</a></li>
+                <li>
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-trigger' href='#' data-target='dropdown1'>
+                        <img th:src="${avatar_url}" class="avatar" alt="foto do usuário" />
+                    </a>
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><span th:text="${username}"></span></li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a href="/logout">
+                                <i class="material-icons">logout</i>
+                                sair
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+    
+            </ul>
+        </div>
+    </nav>
 <div style="
             background-color: #F3F3E9;
             height:100vh;
@@ -62,7 +95,7 @@
             </div>
         </div>
         <div class="row" style="align-items: center; justify-content: center; display: flex;">
-            <div class="col s12 m6">
+            <div class="col s12 m12">
                 <div class="card">
                     <div class="card-image">
                         <img style="width: 100%; height: 250px;"src="https://cdn.discordapp.com/attachments/946468431794954250/1174738264385650738/fundo_formulario.png?ex=6568af43&is=65563a43&hm=16be9ebe2212b4fdd439424f8c1e274c020a336f6ee33f4ff1f9d4f2c4ee9298&">
@@ -72,13 +105,6 @@
                     </div>
                     <div class="card-action" style="width: 100%; height: 70px; align-items: center; justify-content: center; display: flex;">
                         <a href="/formulario" class="waves-effect waves-light btn-large" style="background-color: #678362;"><i class="material-icons right">send</i>Cadastrar Formulário</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image">
-                        <img style="width: 100%; height: 250px;" src="https://cdn.discordapp.com/attachments/946468431794954250/1174738279959101480/fundo_impressao.png?ex=6568af47&is=65563a47&hm=554546f5d040d56896d4bf01b6bc324a47bb159010d1feb10cfe7faadd79b19b&">
                     </div>
                 </div>
             </div>
