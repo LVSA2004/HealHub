@@ -27,13 +27,12 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
-    color: white;
+    color: black;
 }
 
 /* Darker chat container */
 .darker {
-
-    background-color: #444654;
+    background-color: #678362;
 }
 
 /* Clear floats */
@@ -76,7 +75,7 @@
     height: auto;
     width: 25%;
     height: 100vh;
-    background-color: #F3F3E9;
+    background-color:  #232323;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -106,7 +105,7 @@
     background-color: #678362;
     height: fit-content;
     border-radius: 5%;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: #678362 0px 2px 8px 0px;
     align-items: center;
     width: 50%;
 }
@@ -124,7 +123,7 @@
     resize: none;
     border-style: none;
     border-color: transparent;
-    color: white;
+    color: black;
 }
 
 .text-box textarea:active{
@@ -153,14 +152,13 @@ textarea::-webkit-scrollbar{
 }
 
 .choosed{
-    background-color: #343541;
+    background-color: #678362;
 }
 .dialog-link:hover{
-    background-color: #2a2b32;
+    background-color: #678362;
 }
 
 .nav-wrapper{
     background-color: #232323;
 }
-
 
